@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <a href="Ejercicio8.html">HOME</a>
+        <a class="nav-link" href="pi.php">Numero PI</a>
+        <a class="nav-link" href="about.html">ABOUT</a>
+    </nav>
+</header>
+<?php
+    echo "el valor de pi es: " . pi();
+    ?>
+</body>
+</html>
+
+
