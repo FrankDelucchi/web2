@@ -3,7 +3,7 @@ require_once('Lista.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'home';
+$action = 'lista';
 if (!empty($_GET['action'])) { // si viene definida la reemplazamos
     $action = $_GET['action'];
     }
@@ -11,14 +11,14 @@ if (!empty($_GET['action'])) { // si viene definida la reemplazamos
 $params = explode('/', $action);
 
 switch ($params[0]) {
-    case 'home':
-        showHome();
+    case 'lista':
+        showHome($lista);
         break;
     case 'ver 5':
-        show5($params[1]);
+        show5($params[1], $lista);
         break;
     case 'ver 10':
-        show10($params[1]);
+        show10($params[1], $lista);
         break;
     default:
         echo('404 Page not found');
