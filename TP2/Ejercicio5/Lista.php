@@ -8,8 +8,8 @@
 </head>
 <body>
     <ul>
-        <a href="lista/ver10">Ver 10</a>
-        <a href="lista/ver5">Ver 5</a>
+        <a href="ver10">Ver 10</a>
+        <a href="ver5">Ver 5</a>
         <a href="lista">Mostrar todo</a>
     </ul>
     <?php
