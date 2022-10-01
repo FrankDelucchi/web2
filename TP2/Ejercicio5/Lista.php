@@ -8,29 +8,36 @@
 </head>
 <body>
     <ul>
-        <a href="ver10">Ver 10</a>
-        <a href="ver5">Ver 5</a>
+        <a href="10">Ver 10</a>
+        <a href="2">Ver 5</a>
         <a href="lista">Mostrar todo</a>
     </ul>
     <?php
 
-        $lista = array("item 1", "item 2", "item 3","item 4","item 5","item 6","item 7","item 8","item 9","item 10","item 11","item 12","item 13","item 14","item 15");
         
-        function showHome($lista){
-                $lista;
-            }
+        function showHome(){
+           echo 'hola mundo';
+           $lista = array('item', 'item','item', 'item','item', 'item','item', 'item','item', 'item');
+           echo "<ul>";
+           foreach ($lista as $item){
+               echo "<li>" .$item. "</li>";
+           }
+           echo "</ul>";
+        }
         /**if(isset($_GET['ver10']))
             $limite = $_GET['limite'];
         else
             $limite = count($lista);**/
-        function show5($limite, $lista){
+        function show5($limite){
+            $lista = array('item', 'item','item', 'item','item', 'item','item', 'item','item', 'item');
             echo "<ul>";
             for ($item = 0; $item<$limite; $item++){
                 echo "<li>" .$lista[$item]. "</li>";
             }
             echo "</ul>";
         }
-        function show10($limite, $lista){
+        function show10($limite){
+            $lista = array('item', 'item','item', 'item','item', 'item','item', 'item','item', 'item');
             echo "<ul>";
             for ($item = 0; $item<$limite; $item++){
                 echo "<li>" .$lista[$item]. "</li>";
