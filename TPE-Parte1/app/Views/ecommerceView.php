@@ -10,7 +10,13 @@ class ecommerceView{
     }
     
     function showHome(){
-        include 'templates/form.html';
+        include 'templates/products.tpl';
+        include 'templates/form.tpl';
+        $products;
+    }
+
+    function showProductsByCategorie($products){
+
     }
 }
 

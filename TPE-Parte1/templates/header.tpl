@@ -14,21 +14,30 @@
 
 <body>
     <nav class="uk-navbar-container" uk-navbar>
+        <div class="logo">
+            <img src="assets/images/logo.jpg">
+        </div>
+
         <div class="uk-navbar-left">
 
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="home">Active</a></li>
+                <li class="uk-active"><a href="home">home</a></li>
                 <li>
-                    <a href="">Parent</a>
+                    <a href="">Categorias</a>
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li class="uk-active"><a href="#"></a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
+                            <li><a href="zapatillas">Zapatillas</a></li>
+                            <li><a href="camisetas">Camisetas</a></li>
+                            <li><a href="shorts">Shorts</a></li>
+                            <li><a href="buzos">Buzos</a></li>
+                            <li><a href="medias">Medias</a></li>
+                            <li><a href="pelotas">Pelotas</a></li>
+                            <li><a href="all">Todas</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Item</a></li>
+                <li><a href="#">log in</a></li>
             </ul>
 
         </div>

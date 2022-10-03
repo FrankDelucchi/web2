@@ -9,11 +9,18 @@ class ecommerceController {
 
     function __construct() {
         $this->model = new productsModel();
-        $this->model = new categoriesModel();
+        $this->model1 = new categoriesModel();
         $this->view = new ecommerceView();
     }
 
     function showProducts(){
-        $this->view-> showHome();   
+        $products = $this->model->getAll();
+        $this->view-> showHome($products);   
+    }
+
+    function getProductByCategorie($categoria){
+        $filteredProducts = $this->model->getProductsByFk($categoria);
+        $this->view->showProductsByCategorie($filteredProducts);
+        
     }
 }

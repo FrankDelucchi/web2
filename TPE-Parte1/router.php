@@ -17,8 +17,8 @@ switch ($params[0]) {
     case 'home':
         $controller->showProducts();
         break;
-    case '':
-        
+    case 'categorias':
+        $controller->getProductByCategorie($params[1]);
         break;
     case '':
         
