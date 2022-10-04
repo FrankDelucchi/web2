@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">log in</a></li>
+                <li><a href="admin">log in</a></li>
             </ul>
 
         </div>
