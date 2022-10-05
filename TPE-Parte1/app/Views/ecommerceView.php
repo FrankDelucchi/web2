@@ -11,10 +11,16 @@ class ecommerceView{
     
     function showHome($products){
         
-        $this->smarty->assign('producto', $products);
-
+        
+        $this->smarty->assign('products', $products);
         $this->smarty->display('products.tpl');
-        include 'templates/form.tpl';
+        
+        
+        //include 'templates/form.tpl';
+    }
+
+    function showCategories($categories){
+
     }
 
     function showProductsByCategorie($products){

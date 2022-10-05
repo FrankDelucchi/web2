@@ -18,6 +18,11 @@ class ecommerceController {
         $this->view-> showHome($products);   
     }
 
+    function showCategories(){
+        $categories = $this->model->getAll();
+        $this->view-> showHome($categories);   
+    }
+
     function getProductByCategorie($categoria){
         $filteredProducts = $this->model->getProductsByFk($categoria);
         $this->view->showProductsByCategorie($filteredProducts);

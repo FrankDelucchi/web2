@@ -31,7 +31,6 @@
                             <li><a href="camisetas">Camisetas</a></li>
                             <li><a href="shorts">Shorts</a></li>
                             <li><a href="buzos">Buzos</a></li>
-                            <li><a href="medias">Medias</a></li>
                             <li><a href="pelotas">Pelotas</a></li>
                             <li><a href="all">Todas</a></li>
                         </ul>
