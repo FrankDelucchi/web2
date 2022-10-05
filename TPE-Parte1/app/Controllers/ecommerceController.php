@@ -6,6 +6,7 @@ require_once 'app/models/categoriesModel.php';
 class ecommerceController {
     private $model;
     private $view;
+    private $model1;
 
     function __construct() {
         $this->model = new productsModel();
@@ -19,8 +20,8 @@ class ecommerceController {
     }
 
     function showCategories(){
-        $categories = $this->model->getAll();
-        $this->view-> showHome($categories);   
+        $categories = $this->model1->getAll();
+        $this->view-> listCategories($categories);   
     }
 
     function getProductByCategorie($categoria){

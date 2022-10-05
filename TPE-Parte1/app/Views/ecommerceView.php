@@ -19,7 +19,7 @@ class ecommerceView{
         //include 'templates/form.tpl';
     }
 
-    function showCategories($categories){
+    function listCategories($categories){
 
     }
 
