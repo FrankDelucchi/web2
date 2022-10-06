@@ -17,8 +17,14 @@ class productsModel{
         return $products;
     }
 
-    function getProductsByFk(){
+    function getProductsByFk($filter){
+        
+        $query = $this->db->prepare("SELECT products.producto, categoria.categoria FROM products INNER JOIN categoria ON products.id_categoria_fk=categoria.id_categoria WHERE categoria.categoria='$filter';");
+        $query->execute();
 
+        $filteredProducts = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $filteredProducts;
     }
 
 }

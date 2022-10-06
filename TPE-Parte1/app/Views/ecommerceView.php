@@ -1,5 +1,4 @@
 <?php
-require_once 'templates/header.tpl';
 require_once 'libs/smarty/libs/Smarty.class.php';
 
 class ecommerceView{
@@ -11,22 +10,27 @@ class ecommerceView{
     
     function showHome($products){
         
-        
         $this->smarty->assign('products', $products);
         $this->smarty->display('products.tpl');
-        
-        
-        //include 'templates/form.tpl';
     }
 
     function listCategories($categories){
-
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('categories.tpl');
     }
 
     function showProductsByCategorie($products){
 
+        $this->smarty->assign('products', $products);
+        $this->smarty->display('products.tpl');
+    }
+
+    function showHomeAdmin($products){
+        
+        $this->smarty->assign('products', $products);
+        $this->smarty->display('admin.tpl');
     }
 }
 
 
-require_once 'templates/footer.tpl';
+

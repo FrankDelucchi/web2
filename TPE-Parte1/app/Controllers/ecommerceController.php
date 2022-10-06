@@ -29,4 +29,8 @@ class ecommerceController {
         $this->view->showProductsByCategorie($filteredProducts);
         
     }
+    function login(){
+        $products = $this->model->getAll();
+        $this->view-> showHomeAdmin($products);
+    }
 }

@@ -1,0 +1,52 @@
+{include file="header.tpl"}
+
+<hr class="uk-divider-icon">
+
+<form class="uk-grid-small" uk-grid action="add" method="POST">
+   
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Producto" name="producto">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Descripcion" name="descripcion">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Precio" name="precio">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Imagen asociada (URL)" name="imagen">
+    </div>
+    <div class="uk-width-1-1">
+        <input class="uk-input uk-button uk-button-secondary"  type="submit" name="Add" value="Add">
+    </div>
+    
+</form>
+
+<hr class="uk-divider-icon">
+
+<table class="uk-table uk-table-middle uk-table-divider">
+    <thead>
+        <tr>
+            <th class="uk-width-small">Producto</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        {foreach $products as $product}
+            <tr>
+                <td>{$product->producto}</td>
+                <td>{$product->descripcion|truncate:100}</td>
+                <td>{$product->precio}</td>
+                <td>{$product->imagen}</td>
+                <td><button class="uk-button uk-button-primary">Edit</button></td>
+                <td><button class="uk-button uk-button-danger">Delete</button></td>
+            </tr>
+        {/foreach}
+
+    </tbody>
+</table>    
+
+{include file="footer.tpl"}

@@ -22,20 +22,7 @@
 
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><a href="home">home</a></li>
-                <li>
-                    <a href="">Categorias</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#"></a></li>
-                            <li><a href="zapatillas">Zapatillas</a></li>
-                            <li><a href="camisetas">Camisetas</a></li>
-                            <li><a href="shorts">Shorts</a></li>
-                            <li><a href="buzos">Buzos</a></li>
-                            <li><a href="pelotas">Pelotas</a></li>
-                            <li><a href="all">Todas</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li><a href="categorias">Categorias</a></li>
                 <li><a href="admin">log in</a></li>
             </ul>
 

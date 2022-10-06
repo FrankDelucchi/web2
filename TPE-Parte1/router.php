@@ -18,12 +18,16 @@ switch ($params[0]) {
         $controller->showProducts();
         break;
     case 'categorias':
-        $controller->getProductByCategorie($params[1]);
+        $controller->showCategories();
         break;
-    case 'log in':
-        
+    case 'admin':
+        $controller->login();
+        break;
+    case 'product':
+        $id = $params[1];
+        $controller->getProductByCategorie($id);
         break;
     default:
-        //echo('404 Page not found');
+        echo('404 Page not found');
         break;
     }
