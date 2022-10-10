@@ -15,6 +15,7 @@ class ecommerceView{
     }
 
     function listCategories($categories){
+        
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('categories.tpl');
     }

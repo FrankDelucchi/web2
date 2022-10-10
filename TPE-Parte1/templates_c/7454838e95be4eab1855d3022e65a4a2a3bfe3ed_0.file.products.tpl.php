@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-06 06:53:09
+/* Smarty version 4.2.1, created on 2022-10-10 22:39:38
   from 'D:\xampp\htdocs\Web2\TPE-Parte1\templates\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633e5f35e321f1_30594389',
+  'unifunc' => 'content_6344830af0ff28_51917604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7454838e95be4eab1855d3022e65a4a2a3bfe3ed' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Web2\\TPE-Parte1\\templates\\products.tpl',
-      1 => 1665031018,
+      1 => 1665434363,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633e5f35e321f1_30594389 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344830af0ff28_51917604 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\xampp\\htdocs\\Web2\\TPE-Parte1\\libs\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -37,8 +37,9 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
         <div>
-            <div class="uk-card uk-card-default uk-card-body">
-                <a href="producto"><img src="<?php echo $_smarty_tpl->tpl_vars['product']->value->imagen;?>
+            <div class="uk-card uk-card-default uk-card-body" style="height:450px">
+                <a href="producto/<?php echo $_smarty_tpl->tpl_vars['product']->value->id_producto;?>
+"><img class="image-product" style="height:150px" src="<?php echo $_smarty_tpl->tpl_vars['product']->value->imagen;?>
 "></a>
                 <h4><?php echo $_smarty_tpl->tpl_vars['product']->value->producto;?>
 </h4>

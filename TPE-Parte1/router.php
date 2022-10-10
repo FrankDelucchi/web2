@@ -27,7 +27,16 @@ switch ($params[0]) {
         $id = $params[1];
         $controller->getProductByCategorie($id);
         break;
+    case 'add':
+        $controller->addProduct();
+        break;
     default:
         echo('404 Page not found');
+        break;
+    case 'delete':
+        $controller->deleteProduct($params[1]);
+        break;
+    case 'producto':
+        $controller->getSingleProduct($params[1]);
         break;
     }
