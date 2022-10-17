@@ -21,7 +21,7 @@ class sessionController extends appController{
                 $_SESSION ['LOGUED' ] = true;
                 $_SESSION ['USERNAME' ] = $user ;
 
-                header("Location: " . BASE_URL . 'adminProducts'); 
+                header("Location: " . BASE_URL . 'home'); 
             }
             else {
 
