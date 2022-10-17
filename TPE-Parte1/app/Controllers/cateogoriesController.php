@@ -7,18 +7,28 @@ class categoriesController extends appController{
         $this->checkActiveSession();
         
         $categoria = $_POST['categoria'];
-        $this->categoriesModel->add($categoria);
+        if(!$categoria == $this->categoriesModel->getCategoriesByName($categoria)){
+            
+            $this->categoriesModel->add($categoria);
 
-        header("Location: " . BASE_URL . "adminCategories");
+            header("Location: " . BASE_URL . "adminCategories");
+        }
+        else
+        $this->view->showAdminCategories($this->products, $this->categories, 'La categoria ya existe');
     }
 
     function deleteCategorie($id){
 
         $this->checkActiveSession();
-    
-        $this->categoriesModel->delete($id);
 
-        header("Location: " . BASE_URL . "adminCategories");
+        if($this->productsModel->getProductsByFk($id)!= null){
+            
+            $this->categoriesModel->delete($id);
+            header("Location: " . BASE_URL . "adminCategories");
+        }
+        else
+        $this->view->showAdminCategories($this->products, $this->categories, 'La categoria tiene productos asociados');
+    
     }
 
     function editCategorie($id){

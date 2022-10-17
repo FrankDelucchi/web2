@@ -37,17 +37,19 @@ class ecommerceView{
         $this->smarty->display('formLogin.tpl');
     }
 
-    function showAdminProducts($products, $categories){
+    function showAdminProducts($products, $categories, $error = null){
         
         $this->smarty->assign('products', $products);
         $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('error', $error);
         $this->smarty->display('adminProducts.tpl');
     }
 
-    function showAdminCategories($products, $categories){
+    function showAdminCategories($products, $categories, $error = null){
         
         $this->smarty->assign('products', $products);
         $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('error', $error);
         $this->smarty->display('adminCategories.tpl');
     }
 

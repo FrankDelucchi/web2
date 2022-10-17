@@ -38,6 +38,16 @@ class productsModel{
         return $singleProduct;
     }
 
+    ////Busca en la tabla principal un producto segun su nombre y lo devuelve
+    function getProductsByName($product){
+        
+        $query = $this->db->prepare("SELECT * FROM products WHERE producto='$product';");
+        $query->execute();
+        $product = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $product;
+    }
+
     //Agrega un producto a la tabla principal
     function add($producto, $descripcion, $precio,$id_categoria_fk, $imagen){
 

@@ -26,6 +26,15 @@ class categoriesModel{
         return $singleCategorie;
     }
 
+    function getCategoriesByName($categoria){
+                
+        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria='$categoria';");
+        $query->execute();
+        $Categorie = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $Categorie;
+    }
+
     function add($categoria){
 
         $query = $this->db->prepare("INSERT INTO categorias(categoria) VALUES(?)");

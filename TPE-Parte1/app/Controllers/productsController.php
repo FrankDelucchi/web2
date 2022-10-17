@@ -29,9 +29,12 @@ class productsController extends appController{
         $id_categoria_fk = $_POST['fk'];
         $imagen = $_POST['imagen'];
 
-        $this->productsModel->add($producto, $descripcion,$precio,$id_categoria_fk,$imagen);
-
-        header("Location: " . BASE_URL . "adminProducts");
+        if(!$producto == $this->productsModel->getProductsByName($producto)){
+            $this->productsModel->add($producto, $descripcion,$precio,$id_categoria_fk,$imagen);
+            header("Location: " . BASE_URL . "adminProducts");
+        }
+        else
+            $this->view->showAdminProducts($this->products, $this->categories, 'El producto ya existe');
     }
 
     function deleteProduct($id){
