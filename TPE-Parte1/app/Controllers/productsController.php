@@ -4,17 +4,20 @@ class productsController extends appController{
 
     function showProducts(){
         
+        session_start();
         $this->view->showHome($this->products, $this->categories);   
     }
 
     function getProductByCategorie($categoria){
 
+        session_start();
         $filteredProducts = $this->productsModel->getProductsByFk($categoria);
         $this->view->showProductsByCategorie($filteredProducts, $this->categories); 
     }
 
     function getSingleProduct($id){
 
+        session_start();
         $singleProduct = $this->productsModel->getProductsByID($id);
         $this->view->showProductsByID($singleProduct, $this->categories);
     }

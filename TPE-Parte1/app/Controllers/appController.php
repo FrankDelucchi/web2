@@ -14,7 +14,8 @@ class appController {
     protected $categories;
 
     function __construct() {
-
+        
+        //session_start();
         $this->productsModel = new productsModel();
         $this->categoriesModel = new categoriesModel();
         $this->usersModel = new usersModel();
