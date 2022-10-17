@@ -5,31 +5,64 @@ class ecommerceView{
     private $smarty;
 
     function __construct(){
-        $this->smarty = new Smarty(); // inicializo Smarty
+        $this->smarty = new Smarty();
     }
     
-    function showHome($products){
+    function showHome($products, $categories){
         
         $this->smarty->assign('products', $products);
-        $this->smarty->display('products.tpl');
-    }
-
-    function listCategories($categories){
-        
         $this->smarty->assign('categories', $categories);
-        $this->smarty->display('categories.tpl');
+        $this->smarty->display('products.tpl'); 
     }
 
-    function showProductsByCategorie($products){
+    function showProductsByID($singleProduct, $categories){
 
-        $this->smarty->assign('products', $products);
+        $this->smarty->assign('products', $singleProduct);
+        $this->smarty->assign('categories', $categories);
         $this->smarty->display('products.tpl');
     }
 
-    function showHomeAdmin($products){
+    function showProductsByCategorie($filteredProducts, $categories){
+
+        $this->smarty->assign('products', $filteredProducts);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('products.tpl');
+    }
+
+    function showLogin($products, $categories, $error = null){
         
         $this->smarty->assign('products', $products);
-        $this->smarty->display('admin.tpl');
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('formLogin.tpl');
+    }
+
+    function showAdminProducts($products, $categories){
+        
+        $this->smarty->assign('products', $products);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('adminProducts.tpl');
+    }
+
+    function showAdminCategories($products, $categories){
+        
+        $this->smarty->assign('products', $products);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('adminCategories.tpl');
+    }
+
+    function showEditAdminProducts($product, $categories){
+
+        $this->smarty->assign('products', $product);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('editAdminProducts.tpl');
+    }
+
+    function showEditAdminCategories($categorie, $categories){
+
+        $this->smarty->assign('categories', $categorie);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('editAdminCategories.tpl');
     }
 }
 
