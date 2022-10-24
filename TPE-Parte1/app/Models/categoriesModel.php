@@ -19,8 +19,8 @@ class categoriesModel{
 
     function getCategoriesByID($id){
         
-        $query = $this->db->prepare("SELECT * FROM categorias WHERE id_categoria='$id';");
-        $query->execute();
+        $query = $this->db->prepare("SELECT * FROM categorias WHERE id_categoria=?");
+        $query->execute([$id]);
         $singleCategorie = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $singleCategorie;
@@ -28,8 +28,8 @@ class categoriesModel{
 
     function getCategoriesByName($categoria){
                 
-        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria='$categoria';");
-        $query->execute();
+        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria=?");
+        $query->execute([$categoria]);
         $Categorie = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $Categorie;
@@ -44,8 +44,8 @@ class categoriesModel{
     }
 
     function delete($id_categoria){
-        $query = $this->db->prepare("DELETE FROM categorias WHERE id_categoria = '$id_categoria';");
-        $query->execute();
+        $query = $this->db->prepare("DELETE FROM categorias WHERE id_categoria = ?");
+        $query->execute([$id_categoria]);
     }
 
     function update($id, $categoria){

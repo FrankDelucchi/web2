@@ -21,8 +21,8 @@ class productsModel{
     //Devuelve productos de la tabla principal filtrados por categoria
     function getProductsByFk($filter){
         
-        $query = $this->db->prepare("SELECT products.* FROM products INNER JOIN categorias ON products.id_categoria_fk=categorias.id_categoria WHERE categorias.categoria='$filter';");
-        $query->execute();
+        $query = $this->db->prepare("SELECT products.* FROM products INNER JOIN categorias ON products.id_categoria_fk=categorias.id_categoria WHERE categorias.id_categoria=?");
+        $query->execute([$filter]);
         $filteredProducts = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $filteredProducts;
@@ -31,8 +31,8 @@ class productsModel{
     //Busca en la tabla principal un producto segun su ID y lo devuelve
     function getProductsByID($id){
         
-        $query = $this->db->prepare("SELECT * FROM products WHERE id_producto='$id';");
-        $query->execute();
+        $query = $this->db->prepare("SELECT * FROM products WHERE id_producto=?");
+        $query->execute([$id]);
         $singleProduct = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $singleProduct;
@@ -41,8 +41,8 @@ class productsModel{
     ////Busca en la tabla principal un producto segun su nombre y lo devuelve
     function getProductsByName($product){
         
-        $query = $this->db->prepare("SELECT * FROM products WHERE producto='$product';");
-        $query->execute();
+        $query = $this->db->prepare("SELECT * FROM products WHERE producto=?");
+        $query->execute([$product]);
         $product = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $product;
@@ -59,8 +59,8 @@ class productsModel{
 
     //Borra un producto de la tabla principal por su ID
     function delete($id_producto){
-        $query = $this->db->prepare("DELETE FROM products WHERE id_producto = '$id_producto';");
-        $query->execute();
+        $query = $this->db->prepare("DELETE FROM products WHERE id_producto = ?");
+        $query->execute([$id_producto]);
     }
 
     //Modifica un producto de la tabla principal por su ID

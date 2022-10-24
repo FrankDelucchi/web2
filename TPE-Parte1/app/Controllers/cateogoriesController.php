@@ -20,8 +20,9 @@ class categoriesController extends appController{
     function deleteCategorie($id){
 
         $this->checkActiveSession();
+        $filteredProducts = $this->productsModel->getProductsByFk($id);
 
-        if($this->productsModel->getProductsByFk($id)!= null){
+        if(empty($filteredProducts)){
             
             $this->categoriesModel->delete($id);
             header("Location: " . BASE_URL . "adminCategories");

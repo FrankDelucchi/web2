@@ -8,10 +8,10 @@ class productsController extends appController{
         $this->view->showHome($this->products, $this->categories);   
     }
 
-    function getProductByCategorie($categoria){
+    function getProductByCategorie($id){
 
         session_start();
-        $filteredProducts = $this->productsModel->getProductsByFk($categoria);
+        $filteredProducts = $this->productsModel->getProductsByFk($id);
         $this->view->showProductsByCategorie($filteredProducts, $this->categories); 
     }
 

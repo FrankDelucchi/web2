@@ -31,7 +31,7 @@
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             {foreach $categories as $categorie}
-                                <li class="uk-active"><a href="categorias/{$categorie->categoria}">{$categorie->categoria}</a></li>
+                                <li class="uk-active"><a href="categorias/{$categorie->id_categoria}">{$categorie->categoria}</a></li>
                             {/foreach}
                         </ul>
                     </div>
