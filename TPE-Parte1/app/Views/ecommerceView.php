@@ -60,9 +60,9 @@ class ecommerceView{
         $this->smarty->display('editAdminProducts.tpl');
     }
 
-    function showEditAdminCategories($categorie, $categories){
+    function showEditAdminCategories($singlecategorie, $categories){
 
-        $this->smarty->assign('categories', $categorie);
+        $this->smarty->assign('singleCategories', $singlecategorie);
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('editAdminCategories.tpl');
     }
