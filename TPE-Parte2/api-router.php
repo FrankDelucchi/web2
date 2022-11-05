@@ -7,7 +7,7 @@ require_once './app/controllers/ProductsApiController.php';
 $router = new Router;
 
 /**
- *       addroute (Resourece||httpMethod||controller||methodController)
+ *       addroute (Resource||httpMethod||controller||methodController)
  */
 $router->addRoute('productos', 'GET', 'ProductsApiController', 'get');
 $router->addRoute('productos', 'POST', 'ProductsApiController', 'agregarProducto');

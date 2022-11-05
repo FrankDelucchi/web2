@@ -15,29 +15,39 @@ class ProductsApiController extends ApiController{
     function get($params = []) {
 
         if(empty($params)){
+            
             $productos = $this->model->getAllProducts();
-            return $this->view->response($productos,200);
+            if(empty($productos)) {
+                return $this->view->response($productos, 404);
+            }
+            else{
+                return $this->view->response($productos, 200);
+            }
         }
         else {
+           
             $producto = $this->model->getProductsByID($params[":ID"]);
-            if(!empty($producto)) {
-                return $this->view->response($producto,200);
+            if(empty($producto)) {
+                return $this->view->response($producto, 404);
+            }
+            else{
+                return $this->view->response($producto, 200);
             }
         }
 
     }
 
-    public function deleteProduct($params = []) {
+    public function delete($params = null) {
         
         $product_id = $params[':ID'];
         $singleProduct = $this->model->getProductsByID($product_id);
         
         if ($singleProduct) {
-            $this->model->delete($singleProduct);
-            $this->view->response("Producto id=$singleProduct eliminado con éxito", 200);
+            $this->model->delete($product_id);
+            $this->view->response("Producto id=$product_id eliminado con éxito", 200);
         }
         else
-            $this->view->response("Product id=$singleProduct not found", 404);
+            $this->view->response("Product id=$product_id not found", 404);
         }
 
     public function agregarProducto($params = null) {
@@ -57,19 +67,19 @@ class ProductsApiController extends ApiController{
 
         }
 
-    public function updateTask($params = []) {
+    public function modificarProducto($params = []) {
         
         $product_id = $params[':ID'];
         $singleProduct = $this->model->getProductsByID($product_id);
         
         if ($singleProduct) {
             $body = $this->getData();
-            $id_producto = $body->id_producto;
+            //$id_producto = $body->id_producto;
             $producto = $body->producto;
             $descripcion = $body->descripcion;
             $precio = $body->precio;
             $imagen = $body->imagen;
-            $singleProduct = $this->model->update($id_producto, $producto, $descripcion, $precio, $imagen);
+            $singleProduct = $this->model->update($product_id, $producto, $descripcion, $precio, $imagen);
             $this->view->response("Tarea id=$product_id actualizada con éxito", 200);
         }
         else
