@@ -66,7 +66,7 @@ class productsController extends appController{
         $precio = $_POST['precio'];
         $imagen = $_POST['imagen'];
 
-        $this->productsModel->update($id, $producto, $descripcion, $precio, $imagen);
+        $this->productsModel->update($producto, $descripcion, $precio, $imagen, $id);
 
         header("Location: " . BASE_URL . "adminProducts");
     } 

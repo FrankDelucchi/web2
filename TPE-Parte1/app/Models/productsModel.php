@@ -21,7 +21,7 @@ class productsModel{
     //Devuelve productos de la tabla principal filtrados por categoria
     function getProductsByFk($filter){
         
-        $query = $this->db->prepare("SELECT products.* FROM products INNER JOIN categorias ON products.id_categoria_fk=categorias.id_categoria WHERE categorias.id_categoria=?");
+        $query = $this->db->prepare("SELECT * FROM products INNER JOIN categorias ON products.id_categoria_fk=categorias.id_categoria WHERE categorias.id_categoria=?");
         $query->execute([$filter]);
         $filteredProducts = $query->fetchAll(PDO::FETCH_OBJ);
 
@@ -64,8 +64,8 @@ class productsModel{
     }
 
     //Modifica un producto de la tabla principal por su ID
-    function update($id_producto, $producto, $descripcion, $precio, $imagen){
-        $query = $this->db->prepare("UPDATE `products` SET `producto` = '$producto', `descripcion` = '$descripcion', `precio` = '$precio', `imagen` = '$imagen' WHERE `products`.`id_producto` = ?;");
-        $query->execute([$id_producto]);
+    function update($producto, $descripcion, $precio, $imagen, $id_producto){
+        $query = $this->db->prepare("UPDATE products SET producto = ?, descripcion = ?, precio = ?, imagen = ? WHERE id_producto = ?");
+        $query->execute([$producto, $descripcion, $precio, $imagen, $id_producto]);
     }
 }
