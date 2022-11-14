@@ -1,10 +1,9 @@
 <?php
 require_once './app/view/ApiView.php';
-require_once './app/models/ProductsModel.php';
+require_once './app/models/ApiProductsModel.php';
 
 abstract class ApiController {
     
-    protected $model; // lo instancia el hijo
     protected $view;
     private $data;
     

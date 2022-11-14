@@ -15,3 +15,5 @@ api/productos/ID:   DELETE      ApiProductsController       borrarProducto(ID)
 api-router procesa segun siguiente tipo:
 
 "api/recurso/:params"
+
+api/products?filter=categoria&sort_by=[producto, precio, descripcion]&order=asc||desc
