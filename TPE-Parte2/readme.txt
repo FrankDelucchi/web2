@@ -1,19 +1,4 @@
-URL             || Verbo   ||   Controller              ||      Metodo
+API para servicios Ecommerce v1.0.0
 
-api/productos       GET         ApiProductsController       obtenerProductos()
-
-api/productos/ID:   GET         ApiProductsController       obtenerProducto(ID)
-
-api/productos       POST        ApiProductsController       agregarProducto()
-
-api/productos/ID:   PUT         ApiProductsController       modificarProducto(ID)
-
-api/productos/ID:   DELETE      ApiProductsController       borrarProducto(ID)
-
-
-
-api-router procesa segun siguiente tipo:
-
-"api/recurso/:params"
-
-api/products?filter=categoria&sort_by=[producto, precio, descripcion]&order=asc||desc
+Documentacion:
+https://documenter.getpostman.com/view/24265558/2s8YmF1n2B
