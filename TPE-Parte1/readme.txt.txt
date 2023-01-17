@@ -1,4 +1,4 @@
-Ecommerce web whit server side rendering (SSR)
+Ecommerce web with server side rendering (SSR)
 
 Run with XAMPP or any local server provider.
 For xampp, clone the repositorie in folder C:\xampp\htdocs.
