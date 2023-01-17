@@ -83,6 +83,15 @@ class ApiProductsController extends ApiController{
             return true;
     }
     
+
+    /***
+     * 
+     * 
+     *      SERVICIOS
+     * 
+     */
+
+     
     function get() {
         /**
          * Devuelve, si existen, lista de registros ordenados por columna, ascendente o descendentemente
@@ -237,10 +246,3 @@ class ApiProductsController extends ApiController{
         }      
     }
 }
-
-                    /*var_dump($this->getFilter());
-                    var_dump($this->verifyFilter());
-                    var_dump($this->getField());
-                    var_dump($this->verifyField());
-                    var_dump($this->getOrder());
-                    var_dump($this->verifyOrder());*/
